@@ -9,7 +9,7 @@ export class HttpRequestCommand implements Command {
   }
 }
 
-export class HttpRequestCommanWithDebounceTime implements Command {
+export class HttpRequestCommandWithDebounceTime implements Command {
   debounceTime: number;
   callId: number;
   constructor(debounceTime: number) {
@@ -23,6 +23,37 @@ export class HttpRequestCommanWithDebounceTime implements Command {
         console.log("Perform an http request");
         resolve("response");
       }, this.debounceTime);
+    });
+  }
+}
+export class SaveToStorageCommand implements Command {
+  data: any;
+
+  constructor(data: any) {
+    this.data = data;
+  }
+
+  execute(): Promise<any> {
+    return new Promise((resolve, _) => {
+      console.log(this.data);
+      console.log("Save to LocalStorage");
+      resolve("response");
+    });
+  }
+}
+
+export class SaveToDatabaseCommand implements Command {
+  data: any;
+
+  constructor(data: any) {
+    this.data = data;
+  }
+
+  execute(): Promise<any> {
+    return new Promise((resolve, _) => {
+      console.log(this.data);
+      console.log("Save to Database");
+      resolve("response");
     });
   }
 }
