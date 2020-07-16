@@ -1,0 +1,2 @@
+Abstract Factory
+This pattern is used to delegate the creation of objects. An interface is created in order to abstract the implementation. Then every factory that is used in the project should implement this interface. After this, it's only a matter of choosing which factory do you want to use and inject that to your client. This client has no idea which factory is being used and how it's implemented.
