@@ -1,18 +1,18 @@
-export abstract class DOMElement {
+export abstract class DOMElement extends Node {
   id: string;
   styles: string[];
   width: number;
   height: number;
 
   drawInDom() {
-    console.log("Render logic");
+    document.appendChild(this);
   }
 
   removeFromDOM() {
-    console.log("Remove element from the DOM tree");
+    document.removeChild(this);
   }
 
   performDefaultClickAction() {
-    console.log("Click logic");
+    this.click();
   }
 }

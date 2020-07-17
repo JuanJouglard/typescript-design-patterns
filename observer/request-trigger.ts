@@ -2,8 +2,10 @@ import { Emitter } from "./emmiter.interface";
 
 export class RequestTrigger implements Emitter {
   consumers: ((response: any) => any)[];
+  dataGenerator: any;
 
-  emitNewValue(newValue: any) {
+  emitNewValue() {
+    const newValue = this.dataGenerator.getNewValue();
     this.consumers.forEach((consumer) => {
       consumer(newValue);
     });
