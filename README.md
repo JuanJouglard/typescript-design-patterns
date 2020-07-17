@@ -8,3 +8,5 @@ GOF design patterns implemented using typescript language. I've implemented this
 - Composite
 - Adapter
 - Strategy
+
+I tried to define, in each pattern, use cases that might be useful from a FrontEnd perspective.
