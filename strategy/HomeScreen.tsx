@@ -1,9 +1,7 @@
-import {
-  NewTabStrategy,
-  DownloadStrategy,
-  EmailStrategy,
-} from "./strategies.all";
 import { ImageScreen } from "./ImageScreen";
+import { NewTabStrategy } from "./newtab.strategy";
+import { DownloadStrategy } from "./download.strategy";
+import { EmailStrategy } from "./email.strategy";
 
 export class HomeScreen {
   render() {
