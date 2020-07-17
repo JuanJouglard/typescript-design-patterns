@@ -1,5 +1,5 @@
-import { Visitor, Image, Button } from "./visitor.interface";
-import { Link } from "./visitor.interface";
+import { Visitor } from "./visitor.interface";
+import { Link, Image, Button } from "./domelements";
 
 export class CleanVisitor implements Visitor {
   visitImage(image: Image): void {

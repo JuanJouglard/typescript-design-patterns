@@ -1,4 +1,5 @@
 import { Strategy } from "./strategy.interface";
+
 export class ImageScreen {
   img: string;
   render() {
