@@ -1,5 +1,6 @@
 export abstract class Service {
   static instance: Service;
+  someVariable: number;
 
   static getInstance() {
     if (!this.instance) this.instance = this.createInstance();
