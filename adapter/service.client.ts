@@ -1,16 +1,16 @@
 import { Adapter } from "./adapter.interface";
 
 export class ServiceClient {
-  service: Adapter;
-  constructor(service: Adapter) {
-    this.service = service;
+  adapter: Adapter;
+  constructor(adapter: Adapter) {
+    this.adapter = adapter;
   }
 
   sendPicture() {
-    return this.service.postrequest("image/upload", { img: "img" });
+    return this.adapter.postrequest("image/upload", { img: "img" });
   }
 
   getUserInfo() {
-    return this.service.getrequest("user/info");
+    return this.adapter.getrequest("user/info");
   }
 }
