@@ -1,2 +1,11 @@
 Abstract Factory
 This pattern is used to delegate the creation of objects. An interface is created in order to abstract the implementation. Then every factory that is used in the project should implement this interface. After this, it's only a matter of choosing which factory do you want to use and inject that to your client. This client has no idea which factory is being used and how it's implemented.
+
+In this case, i've created a more abstract example, showing how this pattern can be used when modeling a scenario of building a house,  and a more concrete one that uses the pattern to create different items to show on a list.
+
+In the first case, we have a factory interface, which has methods for building some parts of a house. Then we have to concrete classes that implement this interface in different ways. We also have a `HouseBuilder` that has a Factory injected in it's constructor and then uses that factory to create the apropiate objects. Finally, there is a client that creates two house builders, one with each type of factory. As you can see, if we wanted to add a new way of creating a house we only need to add a new class that implements de Factory interface and then create a new HouseBuilder injecting the new factory.
+
+The second example, it's a use case that's present when building the UI part of an Web application. Let's assume we want to show a list of items, but we want to have two different ways of rendering the elements of the list. We need one type of render that only shows some of the data in the item, but not all of them. Then, we also need another type that shows the item in detail.
+    For this, we can use the Factory pattern. We create a factory interface that defines the method createListItem, which then will be implemented by the two concrete factories, DetailListFactory and SimpleListFactory. Then, we create a component that takes a Factory as one of it's props, and uses it to create the items that will be placed in the list. Finally, we can create to different list using the same components, but passing the proper factories as props.
+    
+You can find more information about this pattern here: [Abstract Factory](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
