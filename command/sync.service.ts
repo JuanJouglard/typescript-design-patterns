@@ -11,9 +11,9 @@ export class SyncService {
   runCommandsInIntervals(interval: number) {
     let index = 0;
     const timer = setInterval(() => {
+      if (index == this.commands.length) clearInterval(timer);
       this.commands[index].execute();
       index++;
-      if (index == this.commands.length) clearInterval(timer);
     }, interval);
   }
 
