@@ -4,3 +4,11 @@ This pattern lets us have mutliple parts of our application to be subscribed to 
   In this example, i implemented a basic `Observer` that performs an Http Request and then notifies all the consumers. It's very similar to what Angular does with `Observables` and `Subscriptions`.
   
   You can find more information about this pattern here: [Observer](https://en.wikipedia.org/wiki/Observer_pattern)
+
+## Espanol
+
+Este patron nos permite subscibirnos desde varios lugares en nuestra aplicacion a un mismo emisor de valores. En este ejemplo, se definio un modulo que va a emitir valores y los otros modulos que estan subscriptos al mismo recibiran estos valores para realizar algun procesamiento con ellos. Este es un patron muy comun en el desarrollo web, es utilizado tanto para realizar request HTTP y "escuchar" su valor desde un componente, o cuando se espera que el usuario interactua con la aplicacion para actuar en consecuencia. En este ejemplo, se implemento un `Observer` basico que realiza un Request HTTP y luego notifica a todos los oyentes. Es muy similar al manejo que hace Angular para `Observables` y `Subscriptions`.
+
+
+  Podes encontrar mas informacion acerca de este patron en: [Observer](https://es.wikipedia.org/wiki/Observer_(patr%C3%B3n_de_dise%C3%B1o))
+
