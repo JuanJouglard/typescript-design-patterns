@@ -1,21 +1,4 @@
-export abstract class Service {
-  static instance: Service;
-  someVariable: number;
-
-  static getInstance() {
-    if (!this.instance) this.instance = this.createInstance();
-    return this.instance;
-  }
-  static createInstance(): Service {
-    return null;
-  }
-}
-
-export class HttpService extends Service {
-  createInstance() {
-    return new HttpService();
-  }
-
+class InnerHttpService {
   getRequest(): Promise<any> {
     return new Promise(() => {
       console.log("get request");
@@ -29,12 +12,8 @@ export class HttpService extends Service {
   }
 }
 
-export class StorageService extends Service {
+class InnerStorageService {
   cache: { [key: string]: string };
-
-  createInstance(): StorageService {
-    return new StorageService();
-  }
 
   saveToStorage(key: string, value: string) {
     localStorage.setItem(key, value);
@@ -44,3 +23,18 @@ export class StorageService extends Service {
     return localStorage.getItem(key);
   }
 }
+
+export class Singleton {
+  _instance;
+  InnerService;
+  constructor(Service) {
+    this.InnerService = Service;
+  }
+
+  getInstance() {
+    if (!this._instance) this._instance = new this.InnerService();
+    return this._instance;
+  }
+}
+export const StorageService = new Singleton(InnerStorageService);
+export const HttpService = new Singleton(InnerHttpService);
