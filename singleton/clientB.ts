@@ -1,8 +1,8 @@
-import { HttpService, StorageService, Service } from "./service.interface";
+import { HttpService, StorageService } from "./service.interface";
 
 export class ClientB {
-  httpService: Service;
-  storageService: Service;
+  httpService;
+  storageService;
 
   constructor() {
     this.httpService = HttpService.getInstance();
